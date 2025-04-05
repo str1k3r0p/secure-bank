@@ -1,0 +1,255 @@
+bank_dvwa_project/  # Place this directly in xampp/htdocs/
+│
+├── index.php                       # Main entry point redirects to public/index.php
+├── config.php                      # Global configuration settings
+├── setup.php                       # Setup script for initializing the application
+├── README.md                       # Project documentation
+│
+├── public/                         # Publicly accessible files
+│   ├── index.php                   # Public entry point
+│   ├── .htaccess                   # URL rewriting rules compatible with Apache
+│   ├── js/                         # JavaScript files
+│   │   ├── main.js                 # Main JavaScript functionality
+│   │   ├── jquery.min.js           # jQuery library (for compatibility)
+│   │   ├── bootstrap.min.js        # Bootstrap for responsive design
+│   │   ├── animations.js           # Cyberpunk animations 
+│   │   ├── security-display.js     # Code to display security levels
+│   │   ├── source-viewer.js        # Source code viewer functionality
+│   │   ├── highlight.min.js        # Code syntax highlighting
+│   │   └── vulnerabilities/        # Vulnerability-specific JS
+│   │       ├── bruteforce.js
+│   │       ├── cmd-injection.js
+│   │       ├── sql-injection.js
+│   │       ├── directory-traversal.js
+│   │       └── xss.js
+│   │
+│   ├── css/                        # CSS stylesheets
+│   │   ├── main.css                # Main stylesheet
+│   │   ├── bootstrap.min.css       # Bootstrap CSS
+│   │   ├── cyberpunk-theme.css     # Cyberpunk styling
+│   │   ├── animations.css          # Animation effects
+│   │   ├── security-display.css    # Security level display styling
+│   │   ├── highlight.min.css       # Code syntax highlighting
+│   │   └── dashboard.css           # Dashboard styling
+│   │
+│   └── assets/                     # Static assets
+│       ├── images/                 # Image files
+│       │   ├── logo.png
+│       │   ├── background.jpg
+│       │   ├── favicon.ico         # Website favicon
+│       │   ├── icons/
+│       │   └── cyberpunk/          # Cyberpunk theme images
+│       │
+│       ├── fonts/                  # Custom fonts
+│       │   ├── cyberpunk/
+│       │   └── standard/
+│       │
+│       └── demo/                   # Demo content
+│           └── sample_statements/  # Sample bank statements
+│
+├── app/                            # Application core
+│   ├── init.php                    # Initialization file (autoloader, error handling)
+│   │
+│   ├── core/                       # Core functionality
+│   │   ├── Router.php              # URL routing
+│   │   ├── Controller.php          # Base controller
+│   │   ├── Model.php               # Base model
+│   │   ├── View.php                # View rendering
+│   │   ├── Database.php            # Database connection handling (configured for XAMPP)
+│   │   ├── Security.php            # Security utilities
+│   │   ├── Authentication.php      # Authentication handling
+│   │   ├── Session.php             # Session management
+│   │   ├── ErrorHandler.php        # Custom error handling
+│   │   └── Logger.php              # Activity logging
+│   │
+│   ├── controllers/                # Controller classes
+│   │   ├── HomeController.php      # Home page controller
+│   │   ├── AccountController.php   # Account management
+│   │   ├── TransactionController.php # Transaction handling
+│   │   ├── AdminController.php     # Admin functionality
+│   │   ├── AuthController.php      # Authentication controller
+│   │   ├── VulnerabilityController.php # Vulnerabilities demo
+│   │   └── ErrorController.php     # Error handling controller
+│   │
+│   ├── models/                     # Model classes
+│   │   ├── User.php                # User model
+│   │   ├── Account.php             # Account model
+│   │   ├── Transaction.php         # Transaction model
+│   │   ├── Statement.php           # Statement model
+│   │   └── SecurityLevel.php       # Security level model
+│   │
+│   ├── views/                      # View templates
+│   │   ├── layout/                 # Layout templates
+│   │   │   ├── main.php            # Main layout
+│   │   │   ├── dashboard.php       # Dashboard layout
+│   │   │   ├── admin.php           # Admin layout
+│   │   │   └── vulnerability.php   # Vulnerability demo layout
+│   │   │
+│   │   ├── home/                   # Home page views
+│   │   │   ├── index.php           # Home page
+│   │   │   └── about.php           # About page
+│   │   │
+│   │   ├── auth/                   # Authentication views
+│   │   │   ├── login.php           # User login
+│   │   │   ├── register.php        # User registration
+│   │   │   └── admin_login.php     # Admin login
+│   │   │
+│   │   ├── account/                # Account views
+│   │   │   ├── dashboard.php       # User dashboard
+│   │   │   ├── details.php         # Account details
+│   │   │   ├── statement.php       # Account statement
+│   │   │   └── settings.php        # Account settings
+│   │   │
+│   │   ├── transaction/            # Transaction views
+│   │   │   ├── new.php             # New transaction
+│   │   │   ├── history.php         # Transaction history
+│   │   │   └── confirmation.php    # Confirmation page
+│   │   │
+│   │   ├── admin/                  # Admin views
+│   │   │   ├── dashboard.php       # Admin dashboard
+│   │   │   ├── users.php           # User management
+│   │   │   ├── transactions.php    # Transaction overview
+│   │   │   └── settings.php        # System settings
+│   │   │
+│   │   ├── errors/                 # Error views
+│   │   │   ├── 404.php             # Not found error
+│   │   │   ├── 500.php             # Server error
+│   │   │   └── general.php         # General error template
+│   │   │
+│   │   └── vulnerabilities/        # Vulnerability views
+│   │       ├── index.php           # Vulnerability overview
+│   │       ├── bruteforce.php      # Brute force view
+│   │       ├── cmd_injection.php   # Command injection view
+│   │       ├── sql_injection.php   # SQL injection view
+│   │       ├── directory_traversal.php # Directory traversal view
+│   │       ├── xss.php             # XSS view
+│   │       └── source_view.php     # Source code view
+│   │
+│   └── helpers/                    # Helper functions
+│       ├── form_helper.php         # Form handling helpers
+│       ├── url_helper.php          # URL manipulation helpers
+│       ├── security_helper.php     # Security-related helpers
+│       ├── display_helper.php      # Display-related helpers
+│       └── common_helper.php       # Common utility functions
+│
+├── vulnerabilities/                # Vulnerability implementations
+│   ├── SecurityLevel.php           # Security level base class
+│   ├── VulnerabilityBase.php       # Base class for all vulnerabilities
+│   │
+│   ├── bruteforce/                 # Brute force vulnerability
+│   │   ├── BruteForce.php          # Base class
+│   │   ├── LowSecurity.php         # Low security implementation
+│   │   ├── MediumSecurity.php      # Medium security implementation
+│   │   ├── HighSecurity.php        # High security implementation
+│   │   └── demo.php                # Demo script
+│   │
+│   ├── cmd_injection/              # Command injection vulnerability
+│   │   ├── CommandInjection.php    # Base class
+│   │   ├── LowSecurity.php         # Low security implementation
+│   │   ├── MediumSecurity.php      # Medium security implementation
+│   │   ├── HighSecurity.php        # High security implementation
+│   │   └── demo.php                # Demo script
+│   │
+│   ├── sql_injection/              # SQL injection vulnerability
+│   │   ├── SqlInjection.php        # Base class
+│   │   ├── LowSecurity.php         # Low security implementation
+│   │   ├── MediumSecurity.php      # Medium security implementation
+│   │   ├── HighSecurity.php        # High security implementation
+│   │   └── demo.php                # Demo script
+│   │
+│   ├── directory_traversal/        # Directory traversal vulnerability
+│   │   ├── DirectoryTraversal.php  # Base class
+│   │   ├── LowSecurity.php         # Low security implementation
+│   │   ├── MediumSecurity.php      # Medium security implementation
+│   │   ├── HighSecurity.php        # High security implementation
+│   │   └── demo.php                # Demo script
+│   │
+│   └── xss/                        # XSS vulnerability
+│       ├── XSS.php                 # Base class
+│       ├── LowSecurity.php         # Low security implementation
+│       ├── MediumSecurity.php      # Medium security implementation
+│       ├── HighSecurity.php        # High security implementation
+│       └── demo.php                # Demo script
+│
+├── database/                       # Database files
+│   ├── setup/                      # Database setup scripts
+│   │   ├── database.sql            # Main database schema and structure
+│   │   ├── sample_data.sql         # Sample data for demo
+│   │   └── reset.sql               # Script to reset database
+│   │
+│   ├── backups/                    # Database backups
+│   │   └── .htaccess               # Prevent direct access to backups
+│   │
+│   └── config/                     # Database configuration
+│       └── db_config.php           # XAMPP-specific database settings
+│
+├── includes/                       # Included files
+│   ├── constants.php               # Application constants
+│   ├── functions.php               # Global functions
+│   ├── autoload.php                # Class autoloader
+│   └── version.php                 # Application version information
+│
+├── logs/                           # Log files
+│   ├── access.log                  # Access logs
+│   ├── error.log                   # Error logs
+│   ├── security.log                # Security event logs
+│   └── .htaccess                   # Prevent direct access to logs
+│
+├── config/                         # Configuration files
+│   ├── database.php                # Database configuration (for XAMPP)
+│   ├── app.php                     # Application configuration
+│   ├── security.php                # Security configuration
+│   ├── paths.php                   # Path definitions
+│   └── routes.php                  # Route definitions
+│
+├── install/                        # Installation scripts
+│   ├── index.php                   # Installation wizard
+│   ├── requirements.php            # System requirements checker
+│   ├── database.php                # Database setup
+│   └── finalize.php                # Finalize installation
+│
+├── temp/                           # Temporary files
+│   ├── cache/                      # Cached data
+│   └── uploads/                    # Temporary uploads
+│       └── .htaccess               # Prevent direct PHP execution
+│
+├── docs/                           # Documentation
+│   ├── installation.md             # Installation guide for XAMPP
+│   ├── xampp_setup.md              # XAMPP-specific setup guide
+│   ├── usage.md                    # Usage guide
+│   ├── vulnerabilities/            # Vulnerability documentation
+│   │   ├── bruteforce.md
+│   │   ├── cmd_injection.md
+│   │   ├── sql_injection.md
+│   │   ├── directory_traversal.md
+│   │   └── xss.md
+│   │
+│   └── thesis/                     # Thesis/book material
+│       ├── chapters/               # Book chapters
+│       ├── diagrams/               # Diagram sources
+│       ├── code_samples/           # Code samples for book
+│       └── bibliography.md         # References
+│
+├── tests/                          # Test files
+│   ├── unit/                       # Unit tests
+│   │   ├── SecurityTest.php
+│   │   ├── AuthenticationTest.php
+│   │   └── VulnerabilityTest.php
+│   │
+│   ├── integration/                # Integration tests
+│   │   ├── UserFlowTest.php
+│   │   └── VulnerabilityDemoTest.php
+│   │
+│   └── penetration/                # Penetration testing scripts
+│       ├── bruteforce_test.py
+│       ├── cmd_injection_test.py
+│       ├── sql_injection_test.py
+│       ├── directory_traversal_test.py
+│       └── xss_test.py
+│
+├── .htaccess                       # Root Apache configuration
+├── phpinfo.php                     # PHP configuration information
+├── favicon.ico                     # Root favicon
+├── robots.txt                      # Search engine instructions
+├── .gitignore                      # Git ignore file
+└── CHANGELOG.md                    # Version history

@@ -1,0 +1,346 @@
+/**
+ * Banking DVWA Project
+ * Security Display Styling
+ */
+
+/* Security Level Badges */
+.security-badge-container {
+    display: flex;
+    align-items: center;
+}
+
+.security-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.security-badge-low {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    animation: pulseLow 2s infinite;
+}
+
+.security-badge-medium {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: #ffaa00;
+    border: 1px solid #ffaa00;
+    animation: pulseMedium 2s infinite;
+}
+
+.security-badge-high {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00cc00;
+    border: 1px solid #00cc00;
+    animation: pulseHigh 2s infinite;
+}
+
+@keyframes pulseLow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
+
+@keyframes pulseMedium {
+    0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+}
+
+@keyframes pulseHigh {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+}
+
+/* Security Headers */
+.security-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid;
+}
+
+.security-header.security-low {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-color: #ff4444;
+}
+
+.security-header.security-medium {
+    background-color: rgba(255, 165, 0, 0.1);
+    border-color: #ffaa00;
+}
+
+.security-header.security-high {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-color: #00cc00;
+}
+
+/* Security Level Select */
+.security-level-select {
+    background-color: rgba(10, 10, 40, 0.8);
+    color: #fff;
+    border: 1px solid #444;
+    transition: all 0.3s;
+}
+
+.security-level-select.security-level-low {
+    border-color: #ff4444;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.security-level-select.security-level-medium {
+    border-color: #ffaa00;
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.security-level-select.security-level-high {
+    border-color: #00cc00;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.security-level-select:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.security-level-changed {
+    animation: selectGlitch 0.5s;
+}
+
+@keyframes selectGlitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 0); }
+    80% { transform: translate(0, 2px); }
+    100% { transform: translate(0); }
+}
+
+/* Code Display */
+.code-block {
+    background-color: #0f0f23;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-block::before {
+    content: "CODE";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-bottom-left-radius: 5px;
+}
+
+.vulnerability-container pre {
+    margin-bottom: 0;
+}
+
+/* Security Info */
+.security-info {
+    margin-bottom: 2rem;
+}
+
+.security-info .card {
+    border: none;
+    background-color: rgba(10, 10, 40, 0.4);
+}
+
+.security-info .card-body {
+    padding: 1.5rem;
+}
+
+.security-info p {
+    margin-bottom: 1rem;
+}
+
+.security-info pre {
+    background-color: #0f0f23;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+/* Vulnerability Demo */
+.vulnerability-demo {
+    margin-bottom: 2rem;
+}
+
+.vulnerability-demo .card {
+    border: none;
+    background-color: rgba(10, 10, 40, 0.4);
+}
+
+.vulnerability-demo .card-header {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #333;
+}
+
+.vulnerability-demo .card-body {
+    padding: 1.5rem;
+}
+
+.query-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #00ffff;
+}
+
+/* Vulnerability Examples */
+.vulnerability-examples .table {
+    background-color: rgba(10, 10, 40, 0.3);
+    color: #ddd;
+}
+
+.vulnerability-examples .table th {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #00ffff;
+    border-color: #333;
+}
+
+.vulnerability-examples .table td {
+    border-color: #333;
+}
+
+.vulnerability-examples code {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ff00ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Vulnerability Prevention */
+.vulnerability-prevention .list-group-item {
+    background-color: rgba(10, 10, 40, 0.3);
+    border-color: #333;
+    color: #ddd;
+}
+
+.vulnerability-prevention h6 {
+    margin-bottom: 0.5rem;
+}
+
+.vulnerability-prevention code {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ff00ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Source View Button */
+.view-source-container {
+    margin-top: 2rem;
+}
+
+/* Animated Terminal */
+.terminal-container {
+    background-color: #0f0f23;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ff00;
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terminal-title {
+    color: #ccc;
+}
+
+.terminal-controls span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.terminal-controls .close {
+    background-color: #ff5f56;
+}
+
+.terminal-controls .minimize {
+    background-color: #ffbd2e;
+}
+
+.terminal-controls .maximize {
+    background-color: #27c93f;
+}
+
+.terminal-content {
+    min-height: 150px;
+    position: relative;
+}
+
+.terminal-prompt::before {
+    content: "$ ";
+    color: #00ffff;
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #00ffff;
+    animation: cursor-blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes cursor-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.terminal-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-color: rgba(0, 255, 255, 0.1);
+    animation: scan-line 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan-line {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* Responsive fixes */
+@media (max-width: 576px) {
+    .security-badge {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    .security-info pre code,
+    .vulnerability-demo pre code {
+        font-size: 0.8rem;
+    }
+}

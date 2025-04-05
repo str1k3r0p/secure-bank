@@ -1,0 +1,453 @@
+/**
+ * Banking DVWA Project
+ * Cyberpunk Theme CSS
+ * 
+ * This file contains the cyberpunk styling for the application.
+ */
+
+:root {
+    /* Cyberpunk color palette */
+    --cyber-black: #0a0a1e;
+    --cyber-blue: #00ffff;
+    --cyber-pink: #ff00ff;
+    --cyber-yellow: #ffff00;
+    --cyber-green: #00ff00;
+    --cyber-red: #ff0000;
+    --cyber-purple: #7d1ce4;
+    --cyber-dark-blue: #1a1a35;
+    --cyber-gray: #444444;
+    --cyber-light-gray: #999999;
+    
+    /* Fonts */
+    --cyber-font: 'Share Tech Mono', monospace;
+    --body-font: 'Rajdhani', sans-serif;
+    
+    /* Element sizes */
+    --header-height: 70px;
+    --footer-height: 200px;
+    --glow-size: 5px;
+}
+
+/* Base styles */
+body {
+    background-color: var(--cyber-black);
+    color: #ffffff;
+    font-family: var(--body-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--cyber-font);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    color: var(--cyber-blue);
+    transition: color 0.3s, text-shadow 0.3s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cyber-pink);
+    text-shadow: 0 0 5px var(--cyber-pink);
+    text-decoration: none;
+}
+
+/* Cyberpunk container */
+.cyber-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.cyber-header {
+    background-color: rgba(10, 10, 30, 0.9);
+    border-bottom: 2px solid var(--cyber-blue);
+    box-shadow: 0 0 10px var(--cyber-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    transition: all 0.3s;
+}
+
+.cyber-logo {
+    font-family: var(--cyber-font);
+    font-size: 24px;
+    color: var(--cyber-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--cyber-blue);
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--cyber-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px var(--cyber-blue);
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: var(--cyber-blue);
+}
+
+/* Main content */
+.cyber-main {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 2rem 0;
+}
+
+/* Hero section */
+.cyber-hero {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.cyber-title {
+    font-size: 3rem;
+    color: var(--cyber-blue);
+    text-shadow: 0 0 10px var(--cyber-blue);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.cyber-subtitle {
+    color: var(--cyber-pink);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-shadow: 0 0 5px var(--cyber-pink);
+    margin-bottom: 1.5rem;
+}
+
+/* Glitch effect */
+.cyber-title.glitch {
+    animation: glitch 0.3s linear infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    10% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    20% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    30% {
+        transform: translate(0, 2px) skew(-5deg);
+    }
+    40% {
+        transform: translate(0, -2px) skew(5deg);
+    }
+    50% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    60% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    70% {
+        transform: translate(2px, 0) skew(5deg);
+    }
+    80% {
+        transform: translate(-2px, 0) skew(-5deg);
+    }
+    90% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    100% {
+        transform: translate(0, 0) skew(0deg);
+    }
+}
+
+/* Cards */
+.cyber-card {
+    background: linear-gradient(135deg, rgba(26, 26, 53, 0.9), rgba(10, 10, 30, 0.9));
+    border: 1px solid var(--cyber-blue);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.cyber-card:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+.cyber-card-header {
+    background-color: rgba(0, 255, 255, 0.1);
+    border-bottom: 1px solid var(--cyber-blue);
+    padding: 1rem;
+}
+
+.cyber-card-header h3 {
+    margin: 0;
+    color: var(--cyber-blue);
+    font-size: 1.5rem;
+}
+
+.cyber-card-body {
+    padding: 1.5rem;
+}
+
+/* Buttons */
+.cyber-btn {
+    background-color: var(--cyber-blue);
+    color: var(--cyber-black);
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-family: var(--cyber-font);
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.cyber-btn:hover {
+    background-color: var(--cyber-pink);
+    box-shadow: 0 0 10px var(--cyber-pink);
+    color: #fff;
+}
+
+.cyber-btn-outline {
+    background-color: transparent;
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 0;
+    text-transform: uppercase;
+    font-family: var(--cyber-font);
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.cyber-btn-outline:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: var(--cyber-pink);
+    color: var(--cyber-pink);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.cyber-btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Forms */
+.cyber-form-control {
+    background-color: rgba(10, 10, 30, 0.8);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 0;
+    color: #fff;
+    padding: 0.75rem;
+    transition: all 0.3s;
+}
+
+.cyber-form-control:focus {
+    background-color: rgba(10, 10, 30, 0.9);
+    border-color: var(--cyber-pink);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    color: #fff;
+}
+
+.cyber-form-label {
+    color: var(--cyber-blue);
+    font-family: var(--cyber-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* Alerts */
+.cyber-alert {
+    background-color: rgba(10, 10, 30, 0.8);
+    border-left: 4px solid var(--cyber-yellow);
+    border-radius: 0;
+    color: #fff;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.cyber-alert-title {
+    color: var(--cyber-yellow);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Footer */
+.cyber-footer {
+    background-color: rgba(10, 10, 30, 0.9);
+    border-top: 2px solid var(--cyber-blue);
+    color: #fff;
+    padding: 3rem 0 1.5rem;
+    position: relative;
+    height: var(--footer-height);
+}
+
+.cyber-footer h5 {
+    color: var(--cyber-blue);
+    margin-bottom: 1.5rem;
+}
+
+.cyber-footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.cyber-hr {
+    border-color: var(--cyber-blue);
+    opacity: 0.3;
+    margin: 2rem 0;
+}
+
+/* Visual effects */
+.glitch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        rgba(0, 255, 255, 0.03) 1px,
+        transparent 2px
+    );
+    opacity: 0.5;
+    z-index: 9999;
+}
+
+.scan-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.02) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.cyber-image-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.cyber-image {
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.cyber-image-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 0, 255, 0.2) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cyber-image-container:hover .cyber-image-glitch {
+    opacity: 1;
+    animation: glitch-scan 2s linear infinite;
+}
+
+@keyframes glitch-scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Text effects */
+.text-neon {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px var(--cyber-blue);
+}
+
+.text-glitch {
+    position: relative;
+    animation: text-glitch 3s infinite;
+}
+
+@keyframes text-glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--cyber-pink), -0.05em -0.025em 0 var(--cyber-blue);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 var(--cyber-pink), -0.025em -0.025em 0 var(--cyber-blue);
+    }
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+    .cyber-title {
+        font-size: 2rem;
+    }
+    
+    .cyber-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .cyber-hero {
+        padding: 2rem 0;
+    }
+    
+    .cyber-footer {
+        height: auto;
+    }
+}

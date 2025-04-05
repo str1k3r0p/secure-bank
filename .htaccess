@@ -1,0 +1,50 @@
+# Enable the rewrite engine
+RewriteEngine On
+
+# Set the base directory
+RewriteBase /bank_dvwa_project/
+
+# Redirect all requests to index.php except for existing files or directories
+# and except for the public directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Disable server signature
+ServerSignature Off
+
+# Set security headers
+<IfModule mod_headers.c>
+    # Disable content-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Enable XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent framing (clickjacking)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Hide PHP version
+    Header unset X-Powered-By
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
+    # Apache < 2.3
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </IfModule>
+    # Apache ≥ 2.3
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>

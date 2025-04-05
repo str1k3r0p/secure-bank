@@ -1,0 +1,352 @@
+/**
+ * Banking DVWA Project
+ * Dashboard Styling
+ */
+
+/* Dashboard Layout */
+.cyber-dashboard {
+    padding-top: 20px;
+    min-height: calc(100vh - 70px);
+    background-color: var(--cyber-black);
+    position: relative;
+}
+
+.cyber-dashboard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg, rgba(10, 10, 30, 0.95), rgba(10, 10, 30, 0.95)),
+        url('../assets/images/cyberpunk/grid-bg.svg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 255, 255, 0.2);
+    background-color: rgba(10, 10, 40, 0.95);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 70px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #ccc;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s;
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--cyber-blue);
+    background-color: rgba(0, 255, 255, 0.05);
+    border-left: 3px solid var(--cyber-blue);
+}
+
+.sidebar .nav-link.active {
+    color: var(--cyber-blue);
+    background-color: rgba(0, 255, 255, 0.1);
+    border-left: 3px solid var(--cyber-blue);
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: var(--cyber-blue);
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    font-family: var(--cyber-font);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1.5rem;
+    color: var(--cyber-blue);
+    padding: 0.5rem 1rem;
+}
+
+/* Main Content */
+.cyber-main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cyber-main h1.h2 {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    font-family: var(--cyber-font);
+    margin-bottom: 20px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2) !important;
+}
+
+/* Cards */
+.dashboard-card {
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background-color: rgba(10, 10, 40, 0.7);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transform: translateY(-3px);
+    border-color: var(--cyber-blue);
+}
+
+.dashboard-card-header {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-card-title {
+    margin: 0;
+    color: var(--cyber-blue);
+    font-family: var(--cyber-font);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.dashboard-card-body {
+    padding: 20px;
+    color: #fff;
+}
+
+/* Data Visualization */
+.gauge-container, .chart-container {
+    position: relative;
+    padding: 10px;
+    height: 250px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-family: var(--cyber-font);
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Data Tables */
+.cyber-table {
+    width: 100%;
+    color: #ddd;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cyber-table th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--cyber-blue);
+    border-bottom: 1px solid var(--cyber-blue);
+    font-family: var(--cyber-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
+.cyber-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+.cyber-table tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.cyber-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Fixes */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        top: 0;
+        padding-top: 0;
+        box-shadow: none;
+    }
+    
+    .sidebar-sticky {
+        height: auto;
+    }
+    
+    .cyber-main {
+        margin-left: 0 !important;
+    }
+}
+
+/* Animation Effects */
+.glitch-text {
+    animation: textGlitch 0.3s ease-in-out infinite;
+}
+
+@keyframes textGlitch {
+    0% {
+        transform: none;
+        opacity: 1;
+    }
+    7% {
+        transform: skew(-0.5deg, -0.9deg);
+        opacity: 0.75;
+    }
+    10% {
+        transform: none;
+        opacity: 1;
+    }
+    27% {
+        transform: none;
+        opacity: 1;
+    }
+    30% {
+        transform: skew(0.8deg, -0.1deg);
+        opacity: 0.75;
+    }
+    35% {
+        transform: none;
+        opacity: 1;
+    }
+    52% {
+        transform: none;
+        opacity: 1;
+    }
+    55% {
+        transform: skew(-1deg, 0.2deg);
+        opacity: 0.75;
+    }
+    50% {
+        transform: none;
+        opacity: 1;
+    }
+    72% {
+        transform: none;
+        opacity: 1;
+    }
+    75% {
+        transform: skew(0.4deg, 1deg);
+        opacity: 0.75;
+    }
+    80% {
+        transform: none;
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.btn-glitch {
+    animation: buttonGlitch 0.3s ease-in-out;
+}
+
+@keyframes buttonGlitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 0); }
+    80% { transform: translate(0, 2px); }
+    100% { transform: translate(0); }
+}
+
+/* Cyberpunk Progress Bars */
+.cyber-progress {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    overflow: visible;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.cyber-progress::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0) 5px,
+        rgba(0, 0, 0, 0.2) 5px,
+        rgba(0, 0, 0, 0.2) 10px
+    );
+    pointer-events: none;
+}
+
+.cyber-progress .progress-bar {
+    background-image: linear-gradient(90deg, var(--cyber-blue), var(--cyber-pink));
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.cyber-progress .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.cyber-progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-family: var(--cyber-font);
+    color: #ccc;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-progress-value {
+    font-weight: bold;
+    color: var(--cyber-blue);
+}
